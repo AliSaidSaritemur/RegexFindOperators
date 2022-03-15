@@ -15,7 +15,7 @@ public class Sayac  {
 		Matcher matcher;
 		
 		String line;
-		 pattern =Pattern.compile("(([\\!\\+\\-\\/\\\\%\\&\\^]\\=|(?<![=<>])\\=(?![=<>])|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\|\\/|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^))");
+		 pattern =Pattern.compile("(([\\!\\+\\-\\/\\%\\&\\^]\\=|(?<![=<>])\\=(?![=<>])|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^))");
 	
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
@@ -59,7 +59,7 @@ public class Sayac  {
 	
 	public Integer MantiksalOperatorSayaci (BufferedReader bReader) throws IOException {
 		
-		Pattern pattern=Pattern.compile("(\\&\\&|\\\\\\\\|(?<!\\!)\\!(?!\\!))");
+		Pattern pattern=Pattern.compile("(\\&\\&|\\\\\\\\|\\!(?!\\=))");
 		Matcher matcher;
 	
 		String line;
@@ -101,10 +101,9 @@ public class Sayac  {
 	  
 	
 	
-	Pattern pattern2 =Pattern.compile("(^\\/\\/)");
+	Pattern pattern2 =Pattern.compile("(\\/\\/)");
 	Matcher matcher2= pattern2.matcher(line); 
 	  if(matcher2.find()) {
-		  System.out.println("mera");
 	sonuc = true;}
 	  
 	return sonuc;
