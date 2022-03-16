@@ -10,27 +10,25 @@ public class Sayac  {
 	boolean yorumDurum=false;
 	
 	public Integer sayisalOperatorSayaci (BufferedReader bReader) throws IOException {
-		Pattern pattern;
 		
+		Pattern pattern =Pattern.compile("(([\\!\\+\\-\\/\\%\\&\\^]\\=|(?<![=<>])\\=(?![=<>])|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^))");
+	
 		Matcher matcher;
 		
 		String line;
-		 pattern =Pattern.compile("(([\\!\\+\\-\\/\\%\\&\\^]\\=|(?<![=<>])\\=(?![=<>])|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^))");
 	
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			 matcher =pattern.matcher(line); 
-			 
-			
-			while(matcher.find()){
-				if(Denetim(line))
-					break;
+			 matcher =pattern.matcher(line); 			
+			if(Denetim(line))
+					continue;		 
+			 while(matcher.find()){
+				
 			sayac++;	
 		
 			}
 			}
-			
-		
+					
 		return sayac;
 	}
 	
@@ -44,15 +42,15 @@ public class Sayac  {
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
 			 matcher =pattern.matcher(line); 
+			if(Denetim(line)) 					
+					continue;
 			while(matcher.find()){
-				if(Denetim(line))
-					break;
+								
 			sayac++;	
 		
 			}
 			}
 			
-		
 		return sayac;
 	}
 	
@@ -67,9 +65,9 @@ public class Sayac  {
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
 			 matcher =pattern.matcher(line); 
-			while(matcher.find()){
-				if(Denetim(line))
-					break;
+			if(Denetim(line))
+					continue;
+			while(matcher.find()){				
 			sayac++;	
 		
 			}
@@ -82,29 +80,36 @@ public class Sayac  {
 	private Boolean Denetim(String line) {
 		boolean sonuc =false;
 		
-		Pattern patternn =Pattern.compile("(\\*\\/)");
-		Matcher matcherr= patternn.matcher(line); 
-		if(matcherr.find() || yorumDurum) {
-			yorumDurum =false;
-		sonuc = true;
+	Pattern pattern3 =Pattern.compile("(\\/\\*)");
+	Matcher matcher3= pattern3.matcher(line); 
+	if(matcher3.find()) {
 		
-		}
-		
-
-	Pattern pattern =Pattern.compile("(\\/\\*)");
-	Matcher matcher= pattern.matcher(line); 
-	if(matcher.find() || yorumDurum) {
+	
 		yorumDurum =true;
-	sonuc = true;
+		
 	
 	}
-	  
 	
+	Pattern patternn =Pattern.compile("(\\*\\/)");
+		Matcher matcherr= patternn.matcher(line); 
+		if(matcherr.find()) {
+	
+			yorumDurum =false;
+			sonuc = true;
+		}
 	
 	Pattern pattern2 =Pattern.compile("(\\/\\/)");
 	Matcher matcher2= pattern2.matcher(line); 
 	  if(matcher2.find()) {
 	sonuc = true;}
+	  
+	    
+	if(yorumDurum) {
+
+		sonuc = true;
+	}
+	
+	  
 	  
 	return sonuc;
 }
