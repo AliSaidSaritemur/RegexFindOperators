@@ -8,7 +8,7 @@ public class Deneme {
     }
     /*
      *
-     * x*x + y*y  işlemi x > 0 ve y > 0 &&&
+     * x*x + y*y // işlemi x > 0 ve y > 0
      */
     public int x2y2() {
         return x * x + y * y;

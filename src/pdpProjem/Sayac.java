@@ -19,9 +19,8 @@ public class Sayac  {
 	
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			 matcher =pattern.matcher(line); 			
-			if(Denetim(line))
-					continue;		 
+			 line =Denetim(line);
+			 matcher =pattern.matcher(line); 				 
 			 while(matcher.find()){
 				
 			sayac++;	
@@ -41,9 +40,8 @@ public class Sayac  {
 		
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
+			  line =Denetim(line);
 			 matcher =pattern.matcher(line); 
-			if(Denetim(line)) 					
-					continue;
 			while(matcher.find()){
 								
 			sayac++;	
@@ -64,11 +62,11 @@ public class Sayac  {
 		
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			 matcher =pattern.matcher(line); 
-			if(Denetim(line))
-					continue;
+			 line =Denetim(line);
+			 matcher =pattern.matcher(line); 			
 			while(matcher.find()){				
-			sayac++;	
+			
+				sayac++;	
 		
 			}
 			}
@@ -77,41 +75,91 @@ public class Sayac  {
 		return sayac;
 	}
 	
-	private Boolean Denetim(String line) {
+	
+	
+	
+	private String Denetim(String line) {
 		boolean sonuc =false;
-		
+		String line1 =line;
 	Pattern pattern3 =Pattern.compile("(\\/\\*)");
-	Matcher matcher3= pattern3.matcher(line); 
+	Matcher matcher3= pattern3.matcher(line1); 
 	if(matcher3.find()) {
 		
+		String newLine = " ";
+		char onceki=' ';
+		for(char value :line1.toCharArray()) {
+			
+			if(value =='*' && onceki =='/') {
+				break;
+			}
+			
+			newLine +=onceki;
+			onceki =value;
+		}
 	
 		yorumDurum =true;
-		
+		line1 =newLine;
 	
 	}
 	
 	Pattern patternn =Pattern.compile("(\\*\\/)");
-		Matcher matcherr= patternn.matcher(line); 
+		Matcher matcherr= patternn.matcher(line1); 
 		if(matcherr.find()) {
 	
+			boolean yorumSatiriDevami=false;
+			String newLine = " ";
+			char onceki=' ';
+			for(char value :line1.toCharArray()) {
+				
+					if(yorumSatiriDevami) {
+						
+						newLine +=value;
+					}
+				
+				if(value =='/' && onceki =='*') {
+					yorumSatiriDevami =true;
+				}
+				
+				onceki =value;
+			}
+		
+			line1 =newLine;
+			
 			yorumDurum =false;
-			sonuc = true;
+			
 		}
 	
 	Pattern pattern2 =Pattern.compile("(\\/\\/)");
-	Matcher matcher2= pattern2.matcher(line); 
-	  if(matcher2.find()) {
-	sonuc = true;}
+	Matcher matcher2= pattern2.matcher(line1); 
+	  if(matcher2.find()&&!yorumDurum) {
+	
+		  String newLine = " ";
+			char onceki=' ';
+			for(char value :line1.toCharArray()) {
+				
+				if(value =='/' && onceki =='/') {
+					break;
+				}
+				
+				newLine +=onceki;
+				onceki =value;
+			}
+		  
+		  
+			line1 =newLine;
+			
+	  }
 	  
 	    
 	if(yorumDurum) {
 
-		sonuc = true;
+		line1 =" ";
+	
 	}
 	
 	  
 	  
-	return sonuc;
+	return line1;
 }
 
 	
