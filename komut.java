@@ -1,5 +1,7 @@
 package odev;
 public class Deneme {
+
+
     public int x;
     public int y;
     public Deneme(int x,int y) {

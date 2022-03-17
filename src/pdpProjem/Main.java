@@ -17,10 +17,8 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		Lexical lexical =new Lexical("dist/bla.java");
+		Lexical lexical =new Lexical("komut.java");
 		
-		DosyaOkuma dK = new DosyaOkuma("dist/bla.java");
-
 		Sayac sayac = new Sayac();
 		
 		System.out.println("Operator Bilgisi: ");

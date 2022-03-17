@@ -1,6 +1,6 @@
 /**
 *
-* @Ali Said Saritemur ali.saritemur@agr.sakarya.edu.tr
+* @Ali Said Saritemur ali.saritemur@ogr.sakarya.edu.tr
 * @17.03.2022
 * <p>
 * Operator sayma islemlerinin gercekelstigi sinif
@@ -143,7 +143,7 @@ public class Sayac {
 
 		Pattern patternn = Pattern.compile("(\\*\\/)");
 		Matcher matcherr = patternn.matcher(line1);
-		if (matcherr.find()) {
+		if (matcherr.find() && yorumDurum) {
 
 			boolean yorumSatiriDevami = false;
 			String newLine = " ";
