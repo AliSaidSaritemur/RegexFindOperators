@@ -22,18 +22,16 @@ public class Sayac {
 		Pattern pattern = Pattern.compile(
 				"(([\\|\\+\\-\\/\\%\\&\\^]\\=|(?<![!=<>])\\=(?!=)|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^"
 						+ "|(\\*\\=?|\\/\\=?)))");
-
 		Matcher matcher;
 		String line;
-
 		int sayac = 0;
+		
 		while ((line = bReader.readLine()) != null) {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
 			while (matcher.find()) {
 
 				sayac++;
-
 			}
 		}
 
@@ -43,17 +41,16 @@ public class Sayac {
 	public Integer iliskiselOperatorSayaci(BufferedReader bReader) throws IOException {
 		Pattern pattern = Pattern.compile("(\\<\\=?|\\>\\=?|==|!=)");
 		Matcher matcher;
-
 		String line;
-
 		int sayac = 0;
+		
 		while ((line = bReader.readLine()) != null) {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
+			
 			while (matcher.find()) {
 
 				sayac++;
-
 			}
 		}
 
@@ -64,10 +61,9 @@ public class Sayac {
 
 		Pattern pattern = Pattern.compile("(\\&\\&|\\\\\\\\|\\!(?!\\=))");
 		Matcher matcher;
-
 		String line;
-
 		int sayac = 0;
+		
 		while ((line = bReader.readLine()) != null) {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
@@ -84,10 +80,9 @@ public class Sayac {
 		Pattern pattern = Pattern.compile(
 				"(?<!\\+)\\+(?![\\+\\=])|(?<!\\-)\\-(?![\\-\\=])|\\*(?![\\*\\=])|\\/(?![\\/\\=])|(?<![\\=\\+\\!\\-])\\=(?![\\+\\=])");
 		Matcher matcher;
-
 		String line;
-
 		int sayac = 0;
+
 		while ((line = bReader.readLine()) != null) {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
@@ -102,10 +97,9 @@ public class Sayac {
 
 		Pattern pattern = Pattern.compile("\\+[\\+]|\\-[\\-]");
 		Matcher matcher;
-
 		String line;
-
 		int sayac = 0;
+		
 		while ((line = bReader.readLine()) != null) {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);

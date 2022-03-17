@@ -17,9 +17,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		Lexical lexical =new Lexical("komut.java");
-		
-		Sayac sayac = new Sayac();
+		Lexical lexical =new Lexical("komut.java");		
 		
 		System.out.println("Operator Bilgisi: ");
 		System.out.println("	Ikili Operator Sayisi: " + lexical.getIkiliOpsayisi());
