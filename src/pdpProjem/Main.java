@@ -30,5 +30,5 @@ public class Main {
 		toplamOperantrSayisi *=2;
 		toplamOperantrSayisi -=sayac.TekliOperatorSayaci(dK.yeniBrOlusturma());
 		System.out.println("	Toplam Operand Sayisi: " + toplamOperantrSayisi);
-	}s
+	}
 }
