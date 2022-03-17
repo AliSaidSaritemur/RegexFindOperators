@@ -19,7 +19,7 @@ public class Sayac  {
 	
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			 line =Denetim(line);
+			 line =yorumSatiriniTemizleme(line);
 			 matcher =pattern.matcher(line); 				 
 			 while(matcher.find()){
 				
@@ -40,7 +40,7 @@ public class Sayac  {
 		
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			  line =Denetim(line);
+			  line =yorumSatiriniTemizleme(line);
 			 matcher =pattern.matcher(line); 
 			while(matcher.find()){
 								
@@ -62,7 +62,29 @@ public class Sayac  {
 		
 		 int sayac=0;
 		 while((line =bReader.readLine()) != null) {
-			 line =Denetim(line);
+			 line =yorumSatiriniTemizleme(line);
+			 matcher =pattern.matcher(line); 			
+			while(matcher.find()){				
+			
+				sayac++;	
+		
+			}
+			}
+			
+		
+		return sayac;
+	}
+	
+public Integer IkiliOperatorSayaci (BufferedReader bReader) throws IOException {
+		
+		Pattern pattern=Pattern.compile("(?<!\\+)\\+(?![\\+\\=])|(?<!\\-)\\-(?![\\-\\=])|\\*(?![\\*\\=])|\\/(?![\\/\\=])|(?<![\\=\\+\\!\\-])\\=(?![\\+\\=])");
+		Matcher matcher;
+	
+		String line;
+		
+		 int sayac=0;
+		 while((line =bReader.readLine()) != null) {
+			 line =yorumSatiriniTemizleme(line);
 			 matcher =pattern.matcher(line); 			
 			while(matcher.find()){				
 			
@@ -76,9 +98,31 @@ public class Sayac  {
 	}
 	
 	
+public Integer TekliOperatorSayaci (BufferedReader bReader) throws IOException {
 	
+	Pattern pattern=Pattern.compile("\\+[\\=\\+]|\\-[\\=\\-]");
+	Matcher matcher;
+
+	String line;
 	
-	private String Denetim(String line) {
+	 int sayac=0;
+	 while((line =bReader.readLine()) != null) {
+		 line =yorumSatiriniTemizleme(line);
+		 matcher =pattern.matcher(line); 			
+		while(matcher.find()){				
+		
+			sayac++;	
+	
+		}
+		}
+		
+	
+	return sayac;
+}
+
+
+
+	private String yorumSatiriniTemizleme(String line) {
 		boolean sonuc =false;
 		String line1 =line;
 	Pattern pattern3 =Pattern.compile("(\\/\\*)");

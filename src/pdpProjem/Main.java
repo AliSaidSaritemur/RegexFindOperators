@@ -29,5 +29,13 @@ public class Main {
 	 freader =new FileReader(file);
 		bReader = new BufferedReader(freader);
 	System.out.println("Mantiksal Operator Sayisi: "+sayac.MantiksalOperatorSayaci(bReader));
+	 freader =new FileReader(file);
+		bReader = new BufferedReader(freader);
+		System.out.println("Tekli Operator Sayisi: "+sayac.IkiliOperatorSayaci(bReader));
+		 freader =new FileReader(file);
+			bReader = new BufferedReader(freader);
+			System.out.println("Tekli Operator Sayisi: "+sayac.TekliOperatorSayaci(bReader));
+		
+	
 }
 }
