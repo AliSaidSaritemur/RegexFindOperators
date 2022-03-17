@@ -8,33 +8,20 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) throws IOException{
-
-		File file =new File("dist/Lexical.java");
-		
-		if(! file.exists()) {
-			
-			file.createNewFile();
-		}
-		
-		FileReader freader =new FileReader(file);	
-	BufferedReader bReader = new BufferedReader(freader);
+	DosyaOkuma dK=new DosyaOkuma("dist/Lexical.java");
+	
 	
 	Sayac sayac =new Sayac();
-	System.out.println("Sayisal Operator Sayisi: "+sayac.sayisalOperatorSayaci(bReader));
+	System.out.println("Sayisal Operator Sayisi: "+sayac.sayisalOperatorSayaci(dK.yeniBrOlusturma()));
 	
-	freader =new FileReader(file);
-	bReader = new BufferedReader(freader);
+
+	System.out.println("Iliskisel Operator Sayisi: "+sayac.iliskiselOperatorSayaci(dK.yeniBrOlusturma()));
+
+	System.out.println("Mantiksal Operator Sayisi: "+sayac.MantiksalOperatorSayaci(dK.yeniBrOlusturma()));
 	
-	System.out.println("Iliskisel Operator Sayisi: "+sayac.iliskiselOperatorSayaci(bReader));
-	 freader =new FileReader(file);
-		bReader = new BufferedReader(freader);
-	System.out.println("Mantiksal Operator Sayisi: "+sayac.MantiksalOperatorSayaci(bReader));
-	 freader =new FileReader(file);
-		bReader = new BufferedReader(freader);
-		System.out.println("Tekli Operator Sayisi: "+sayac.IkiliOperatorSayaci(bReader));
-		 freader =new FileReader(file);
-			bReader = new BufferedReader(freader);
-			System.out.println("Tekli Operator Sayisi: "+sayac.TekliOperatorSayaci(bReader));
+		System.out.println("Tekli Operator Sayisi: "+sayac.IkiliOperatorSayaci(dK.yeniBrOlusturma()));
+
+			System.out.println("Tekli Operator Sayisi: "+sayac.TekliOperatorSayaci(dK.yeniBrOlusturma()));
 		
 	
 }

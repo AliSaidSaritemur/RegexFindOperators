@@ -11,7 +11,8 @@ public class Sayac  {
 	
 	public Integer sayisalOperatorSayaci (BufferedReader bReader) throws IOException {
 		
-		Pattern pattern =Pattern.compile("(([\\!\\+\\-\\/\\%\\&\\^]\\=|(?<![=<>])\\=(?![=<>])|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^))");
+		Pattern pattern =Pattern.compile("(([\\|\\+\\-\\/\\%\\&\\^]\\=|(?<![!=<>])\\=(?!=)|\\+[\\+\\=]|\\+|\\-[\\-\\=]|\\-|\\||(?<!\\/)\\/(?!\\/)|\\%|(?<!\\&)\\&(?!\\&)|(?<!\\|)\\|(?!\\|)|\\^"
+				+ "|(\\*\\=?|\\/\\=?)))");
 	
 		Matcher matcher;
 		
