@@ -11,24 +11,23 @@ public class DosyaOkuma {
 		super();
 		this.dosyaKonumu = dosyaKonumu;
 	}
-	
+
 	private String dosyaKonumu;
-	
+
 	public BufferedReader yeniBrOlusturma() throws IOException {
-		
-File file =new File(dosyaKonumu);
-		
-		if(! file.exists()) {
-			
+
+		File file = new File(dosyaKonumu);
+
+		if (!file.exists()) {
+
 			file.createNewFile();
 		}
-		
-		FileReader freader =new FileReader(file);	
-	BufferedReader bReader = new BufferedReader(freader);
-	
-	return bReader;
-		
+
+		FileReader freader = new FileReader(file);
+		BufferedReader bReader = new BufferedReader(freader);
+
+		return bReader;
+
 	}
-	
-	
+
 }
