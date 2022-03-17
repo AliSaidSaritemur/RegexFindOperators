@@ -1,3 +1,11 @@
+/**
+*
+* @Ali Said Saritemur ali.saritemur@agr.sakarya.edu.tr
+* @17.03.2022
+* <p>
+* Operator sayma islemlerinin gercekelstigi sinif
+* </p>
+*/
 package pdpProjem;
 
 import java.io.BufferedReader;
@@ -16,7 +24,6 @@ public class Sayac {
 						+ "|(\\*\\=?|\\/\\=?)))");
 
 		Matcher matcher;
-
 		String line;
 
 		int sayac = 0;
@@ -65,9 +72,7 @@ public class Sayac {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
 			while (matcher.find()) {
-
 				sayac++;
-
 			}
 		}
 
@@ -87,12 +92,9 @@ public class Sayac {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
 			while (matcher.find()) {
-
 				sayac++;
-
 			}
 		}
-
 		return sayac;
 	}
 
@@ -108,12 +110,9 @@ public class Sayac {
 			line = yorumSatiriniTemizleme(line);
 			matcher = pattern.matcher(line);
 			while (matcher.find()) {
-
 				sayac++;
-
 			}
 		}
-
 		return sayac;
 	}
 

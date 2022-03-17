@@ -1,3 +1,11 @@
+/**
+*
+* @Ali Said Saritemur ali.saritemur@agr.sakarya.edu.tr
+* @17.03.2022
+* <p>
+* Dosya okuma iþleminin gercekle
+* </p>
+*/
 package pdpProjem;
 
 import java.io.BufferedReader;
