@@ -29,6 +29,6 @@ public class Main {
 		+sayac.MantiksalOperatorSayaci(dK.yeniBrOlusturma());
 		toplamOperantrSayisi *=2;
 		toplamOperantrSayisi -=sayac.TekliOperatorSayaci(dK.yeniBrOlusturma());
-		System.out.println("	Toplam Operand Sayisi: " + 23);
-	}
+		System.out.println("	Toplam Operand Sayisi: " + toplamOperantrSayisi);
+	}s
 }
