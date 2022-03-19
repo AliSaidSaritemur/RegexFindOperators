@@ -75,8 +75,8 @@ public class Lexical {
 		DosyaOkuma dK = new DosyaOkuma(dosyaKonumu);
 		Sayac sayac = new Sayac();
 
-		ikiliOpsayisi = sayac.IkiliOperatorSayaci(dK.yeniBrOlusturma());
 		tekliOpsayisi = sayac.TekliOperatorSayaci(dK.yeniBrOlusturma());
+		ikiliOpsayisi = sayac.IkiliOperatorSayaci(dK.yeniBrOlusturma());
 		sayisalOpsayisi = sayac.sayisalOperatorSayaci(dK.yeniBrOlusturma());
 		iliskiselOpSayisi = sayac.iliskiselOperatorSayaci(dK.yeniBrOlusturma());
 		mantiksalOpSayisi = sayac.MantiksalOperatorSayaci(dK.yeniBrOlusturma());

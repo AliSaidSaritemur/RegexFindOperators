@@ -1,7 +1,5 @@
 package odev;
 public class Deneme {
-
-
     public int x;
     public int y;
     public Deneme(int x,int y) {
@@ -18,7 +16,7 @@ public class Deneme {
     /*
      * Karakök işlemi yapan fonksiyon
      * karakok(x*x + y*y)
-     */
+     */+
     public double karakok() {
         return Math.sqrt((double)x2y2());
     }

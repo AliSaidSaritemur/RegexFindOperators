@@ -122,15 +122,26 @@ public class Sayac {
 			char onceki = ' ';
 			for (char value : line1.toCharArray()) {
 
-				if (value == '*' && onceki == '/') {
-					break;
+				if (value == '*' && onceki == '/'&&!yorumDurum) {
+					
+					yorumDurum=true;
+								
 				}
 
+				else if (value == '/' && onceki == '*' &&yorumDurum) {
+					yorumDurum = false;
+					continue;
+				}
+
+				if(!yorumDurum) {
+				
 				newLine += onceki;
+				}
+				
 				onceki = value;
 			}
 
-			yorumDurum = true;
+			
 			line1 = newLine;
 
 		}
@@ -149,7 +160,7 @@ public class Sayac {
 					newLine += value;
 				}
 
-				if (value == '/' && onceki == '*') {
+				if (value == '/' && onceki == '*'&&yorumDurum) {
 					yorumSatiriDevami = true;
 				}
 
