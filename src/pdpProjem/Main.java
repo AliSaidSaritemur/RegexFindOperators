@@ -31,7 +31,7 @@ public class Main {
 		System.out.println("	Mantiksal Operator Sayisi: " + lexical.getMantiksalOpSayisi());
 
 		System.out.println("Operand Bilgisi: ");
-		
 		System.out.println("	Toplam Operand Sayisi: " + lexical.getToplamOperandSayisi());
+		
 	}
 }
