@@ -1,6 +1,6 @@
 /**
 *
-* @Ali Said Saritemur ali.saritemur@agr.sakarya.edu.tr
+* @Ali Said Saritemur ali.saritemur@ogr.sakarya.edu.tr
 * @17.03.2022
 * <p>
 * Operator ve operand bilgisinin tutuldugu sinif
@@ -10,7 +10,7 @@ package pdpProjem;
 
 import java.io.IOException;
 
-public class Lexical {
+public class Operator {
 
 	private String dosyaKonumu;
 
@@ -69,7 +69,7 @@ public class Lexical {
 		this.toplamOperandSayisi = toplamOperandSayisi;
 	}
 
-	public Lexical(String dosyaKonumu) throws IOException {
+	public Operator(String dosyaKonumu) throws IOException {
 		super();
 		this.dosyaKonumu = dosyaKonumu;
 		DosyaOkuma dK = new DosyaOkuma(dosyaKonumu);

@@ -1,6 +1,6 @@
 /**
 *
-* @Ali Said Saritemur ali.saritemur@agr.sakarya.edu.tr
+* @Ali Said Saritemur ali.saritemur@ogr.sakarya.edu.tr
 * @17.03.2022
 * <p>
 * Dosya okuma iþleminin gercekle
@@ -38,4 +38,7 @@ public class DosyaOkuma {
 
 	}
 
+	
+	
+	
 }
