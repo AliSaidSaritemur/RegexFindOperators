@@ -10,7 +10,7 @@ package pdpProjem;
 
 import java.io.IOException;
 
-public class Operator {
+public class Lexical {
 
 	private String dosyaKonumu;
 
@@ -69,7 +69,7 @@ public class Operator {
 		this.toplamOperandSayisi = toplamOperandSayisi;
 	}
 
-	public Operator(String dosyaKonumu) throws IOException {
+	public Lexical(String dosyaKonumu) throws IOException {
 		super();
 		this.dosyaKonumu = dosyaKonumu;
 		DosyaOkuma dK = new DosyaOkuma(dosyaKonumu);
