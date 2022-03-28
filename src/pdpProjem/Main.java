@@ -17,8 +17,11 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Lexical operator =new Lexical(args[0]);		
 		
+		
+		try {
+		Lexical operator =new Lexical(args[0]);		
+
 		System.out.println("Operator Bilgisi: ");
 		System.out.println("	Tekli Operator Sayisi: " + operator.getTekliOpsayisi());
 		
@@ -32,6 +35,10 @@ public class Main {
 
 		System.out.println("Operand Bilgisi: ");
 		System.out.println("	Toplam Operand Sayisi: " + operator.getToplamOperandSayisi());
+		}
 		
+		catch(Exception e){
+				System.out.println("Verilerin cekilecegi dosyayi girmediniz");
+		}
 	}
 }

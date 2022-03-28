@@ -1,3 +1,0 @@
-Lexical classı hem dist de hem de ana dosyanın içinde bulunmakta.
-Bunun sebebi powerShellin distte açılması durumunda jar dosyasının dist içindeki
-Lexical.java'yı esas alıcak olamsıdır. 
